@@ -6,11 +6,11 @@
 #include <vector>
 #include <string.h>
 
-
-
+int64_t result=0;
 void 
 setup(int64_t N, uint64_t A[])
 {
+
    printf(" inside direct_sum problem_setup, N=%lld \n", N);
 }
 
@@ -18,7 +18,8 @@ int64_t
 sum(int64_t N, uint64_t A[])
 {
    printf(" inside direct_sum perform_sum, N=%lld \n", N);
-
-   return 0;
+   result++;
+   printf("direct sum ",result);
+   return result;
 }
 
