@@ -1,0 +1,6 @@
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/benchmark.dir
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/sum_direct.dir
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/sum_vector.dir
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/sum_indirect.dir
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/edit_cache.dir
+C:/Users/OrangeCatBears/Documents/CompSci HW/CSC656/CodingProject 2/sum_harness_instructional/build/CMakeFiles/rebuild_cache.dir
