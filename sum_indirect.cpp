@@ -5,6 +5,8 @@
 #include <random>
 #include <vector>
 #include <string.h>
+#include <stdlib.h>
+
 
 
 
@@ -12,13 +14,21 @@ void
 setup(int64_t N, uint64_t A[])
 {
    printf(" inside sum_indirect problem_setup, N=%lld \n", N);
+
+   for(int i=0;i<N;i++){
+      A[i]=lrand48() % N;
+   }
 }
 
 int64_t
 sum(int64_t N, uint64_t A[])
 {
    printf(" inside sum_indirect perform_sum, N=%lld \n", N);
+   int64_t totalSum=0;
+   for(int i=0;i<N;i++){
+      totalSum+=A[i];
+   }
 
-   return 0;
+   return totalSum;
 }
 
