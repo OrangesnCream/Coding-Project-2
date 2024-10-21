@@ -25,8 +25,10 @@ sum(int64_t N, uint64_t A[])
 {
    printf(" inside sum_indirect perform_sum, N=%lld \n", N);
    int64_t totalSum=0;
+   int64_t indx=A[0];
    for(int i=0;i<N;i++){
-      totalSum+=A[i];
+      totalSum+=A[indx];
+      indx=A[indx];
    }
 
    return totalSum;
