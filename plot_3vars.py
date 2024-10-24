@@ -32,9 +32,9 @@ print("var names =", var_names)
 # assumption: column order - 0=problem size, 1=blas time, 2=basic time
 
 problem_sizes = df[var_names[0]].values.tolist()
-code1_time = df[var_names[1]].values.tolist()
-code2_time = df[var_names[2]].values.tolist()
-code3_time = df[var_names[3]].values.tolist()
+direct_time = df[var_names[1]].values.tolist()
+vector_time = df[var_names[2]].values.tolist()
+indirect_time = df[var_names[3]].values.tolist()
 
 plt.title("Comparison of 3 Codes")
 
@@ -49,15 +49,72 @@ plt.xticks(xlocs, problem_sizes)
 # time and problem size? You may need to add some code here to compute
 # MFLOPS, then modify the plt.plot() lines below to plot MFLOPS rather than time.
 
-plt.plot(code1_time, "r-o")
-plt.plot(code2_time, "b-x")
-plt.plot(code3_time, "g-^")
+print("Choose what to plot 0=MFLOPS, 1=Bandwith, 2=latency, anything else is just time")
+input1 = int(input())
+print("var names =", input1)
+
+if(input1==0):
+    plt.title("Comparison of 3 Sum methods: Perlmutter CPU Node")
+    for index, time in enumerate(direct_time):
+        print("time=", time)
+        direct_time[index]=(problem_sizes[index]/1000000)/time
+        print("mflops =", direct_time[index])
+    for index, time in enumerate(vector_time):
+        print("time=", time)
+        vector_time[index]=(problem_sizes[index]/1000000)/time
+        print("mflops =", vector_time[index])
+    for index, time in enumerate(indirect_time):
+        print("time=", time)
+        indirect_time[index]=(problem_sizes[index]/1000000)/time
+        print("mflops =",indirect_time[index])
+    plt.xlabel("Problem Sizes")
+    plt.ylabel("MFLOP/s")
+    plt.yscale("log")
+elif(input1==1):
+    plt.title("Comparison of 3 Sum methods: Perlmutter CPU Node")
+    for index, time in enumerate(direct_time):
+        print("time=", time)
+        direct_time[index]=((((problem_sizes[index]*0)/1000000000)/time)/204.8)*100
+        print("mflops =", direct_time[index])
+    for index, time in enumerate(vector_time):
+        print("time=", time)
+        vector_time[index]=((((problem_sizes[index]*2)/1000000000)/time)/204.8)*100
+        print("mflops =", vector_time[index])
+    for index, time in enumerate(indirect_time):
+        print("time=", time)
+        indirect_time[index]=((((problem_sizes[index]*4)/1000000000)/time)/204.8)*100
+        print("mflops =",indirect_time[index])
+    plt.xlabel("Problem Sizes")
+    plt.ylabel("percentage of Bandwidth used(0.0 to 100.0)")
+elif(input1==2):
+    plt.title("Comparison of 3 Sum methods: Perlmutter CPU Node")
+    for index, time in enumerate(direct_time):
+        print("time=", time)
+        direct_time[index]=0
+        print("mflops =", direct_time[index])
+    for index, time in enumerate(vector_time):
+        print("time=", time)
+        vector_time[index]=(time*1000000000)/(problem_sizes[index]*2)
+        print("mflops =", vector_time[index])
+    for index, time in enumerate(indirect_time):
+        print("time=", time)
+        indirect_time[index]=(time*1000000000)/(problem_sizes[index]*4)
+        print("mflops =",indirect_time[index])
+    plt.xlabel("Problem Sizes")
+    plt.ylabel("Latency nanoseconds/bytes")
+    
+else:
+    plt.xlabel("Problem Sizes")
+    plt.ylabel("runtime")
+
+
+plt.plot(direct_time, "r-o")
+plt.plot(vector_time, "b-x")
+plt.plot(indirect_time, "g-^")
 
 #plt.xscale("log")
-#plt.yscale("log")
 
-plt.xlabel("Problem Sizes")
-plt.ylabel("runtime")
+
 
 varNames = [var_names[1], var_names[2], var_names[3]]
 plt.legend(varNames, loc="best")
