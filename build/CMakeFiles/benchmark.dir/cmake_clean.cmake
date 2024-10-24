@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/benchmark.dir/benchmark.cpp.obj"
-  "CMakeFiles/benchmark.dir/benchmark.cpp.obj.d"
+  "CMakeFiles/benchmark.dir/benchmark.cpp.o"
+  "CMakeFiles/benchmark.dir/benchmark.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

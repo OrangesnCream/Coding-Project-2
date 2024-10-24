@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sum_vector.dir/sum_vector.cpp.obj"
-  "CMakeFiles/sum_vector.dir/sum_vector.cpp.obj.d"
-  "libsum_vector.dll.a"
-  "sum_vector.exe"
-  "sum_vector.exe.manifest"
+  "CMakeFiles/sum_vector.dir/sum_vector.cpp.o"
+  "CMakeFiles/sum_vector.dir/sum_vector.cpp.o.d"
+  "sum_vector"
   "sum_vector.pdb"
 )
 

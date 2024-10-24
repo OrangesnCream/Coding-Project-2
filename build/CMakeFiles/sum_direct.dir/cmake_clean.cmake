@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sum_direct.dir/sum_direct.cpp.obj"
-  "CMakeFiles/sum_direct.dir/sum_direct.cpp.obj.d"
-  "libsum_direct.dll.a"
-  "sum_direct.exe"
-  "sum_direct.exe.manifest"
+  "CMakeFiles/sum_direct.dir/sum_direct.cpp.o"
+  "CMakeFiles/sum_direct.dir/sum_direct.cpp.o.d"
+  "sum_direct"
   "sum_direct.pdb"
 )
 
